@@ -8,12 +8,12 @@
 <link rel="manifest" href="manifest.json">
 <style>
 :root{--bg:#f3f1eb;--card:#fff;--ink:#18312c;--muted:#6f7e79;--accent:#1f5b4f;--accent2:#dbe9e3;--line:#dde4df;--hot:#8c5938;--danger:#a14848;--shadow:0 10px 30px rgba(20,50,42,.08)}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1000px;margin:auto;min-height:100vh;padding-bottom:92px}header{padding:22px 20px 8px;display:flex;gap:12px;align-items:center}.mark{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;color:white;font-size:26px}.sub,.muted,.small{color:var(--muted)}.small{font-size:13px}.grid{display:grid;gap:14px;padding:12px 20px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--card);border-radius:22px;padding:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#173f37,#2d7566);color:#fff}.hero .small{color:#dcebe6}.big{font-size:40px;font-weight:800}.stat{font-size:26px;font-weight:780}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:11px 14px;background:var(--accent);color:#fff;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.alt{background:var(--accent2);color:var(--accent)}.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#f4dddd;color:var(--danger)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;color:var(--ink)}textarea{min-height:82px;resize:vertical}label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.full{grid-column:1/-1}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar>*{flex:1;min-width:140px}.list{display:grid;gap:10px}.item{border:1px solid var(--line);border-radius:17px;padding:14px;background:#fff;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:700;margin:4px 4px 0 0}.pill.hot{background:#f0e1d7;color:var(--hot)}.pill.skill{background:#e9e4f2;color:#574372}.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:30}.navinner{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(6,1fr)}.nav button{border:0;background:transparent;padding:12px 4px;color:var(--muted);font-size:12px;font-weight:750}.nav button.active{color:var(--accent)}.view{display:none}.view.active{display:block}.modal{position:fixed;inset:0;background:rgba(12,39,33,.76);display:flex;align-items:center;justify-content:center;padding:18px;z-index:80}.modalbox{background:#fff;border-radius:24px;padding:22px;max-width:720px;width:100%;max-height:92vh;overflow:auto}.hidden{display:none!important}.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;background:#17332d;color:#fff;padding:10px 15px;border-radius:999px;z-index:120;opacity:0;transition:.2s}.toast.show{opacity:1}.detailTitle{font-size:28px;margin:0 0 5px}.detailHero{padding:22px;border-radius:22px;background:linear-gradient(145deg,#edf4f1,#fff);border:1px solid var(--line)}.planSlot{border:1px dashed #b9cbc4;border-radius:17px;padding:14px;background:#fbfcfb}.order{display:flex;gap:6px}.order button{width:38px;height:38px;padding:0}.suggestion{padding:12px;border-radius:15px;background:#f8faf9;border:1px solid var(--line);margin-top:8px}.progressbar{height:10px;background:#dfe7e3;border-radius:999px;overflow:hidden}.progressbar span{display:block;height:100%;background:#fff}.posegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.posecard{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}@media(max-width:680px){.grid.two,.formgrid,.posegrid{grid-template-columns:1fr}.full{grid-column:auto}.item{flex-direction:column}.actions{width:100%}.actions .btn{flex:1}.big{font-size:34px}}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1000px;margin:auto;min-height:100vh;padding-bottom:92px}header{padding:22px 20px 8px;display:flex;gap:12px;align-items:center}.mark{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;color:white;font-size:26px}.sub,.muted,.small{color:var(--muted)}.small{font-size:13px}.grid{display:grid;gap:14px;padding:12px 20px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--card);border-radius:22px;padding:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#173f37,#2d7566);color:#fff}.hero .small{color:#dcebe6}.big{font-size:40px;font-weight:800}.stat{font-size:26px;font-weight:780}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:11px 14px;background:var(--accent);color:#fff;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.alt{background:var(--accent2);color:var(--accent)}.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#f4dddd;color:var(--danger)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;color:var(--ink)}textarea{min-height:82px;resize:vertical}label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.full{grid-column:1/-1}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar>*{flex:1;min-width:140px}.list{display:grid;gap:10px}.item{border:1px solid var(--line);border-radius:17px;padding:14px;background:#fff;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:700;margin:4px 4px 0 0}.pill.hot{background:#f0e1d7;color:var(--hot)}.pill.skill{background:#e9e4f2;color:#574372}.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:30}.navinner{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(6,1fr)}.nav button{border:0;background:transparent;padding:12px 4px;color:var(--muted);font-size:12px;font-weight:750}.nav button.active{color:var(--accent)}.view{display:none}.view.active{display:block}.modal{position:fixed;inset:0;background:rgba(12,39,33,.76);display:flex;align-items:center;justify-content:center;padding:18px;z-index:80}.modalbox{background:#fff;border-radius:24px;padding:22px;max-width:720px;width:100%;max-height:92vh;overflow:auto}.hidden{display:none!important}.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;background:#17332d;color:#fff;padding:10px 15px;border-radius:999px;z-index:120;opacity:0;transition:.2s}.toast.show{opacity:1}.detailTitle{font-size:28px;margin:0 0 5px}.detailHero{padding:22px;border-radius:22px;background:linear-gradient(145deg,#edf4f1,#fff);border:1px solid var(--line)}.planSlot{border:1px dashed #b9cbc4;border-radius:17px;padding:14px;background:#fbfcfb}.order{display:flex;gap:6px}.order button{width:38px;height:38px;padding:0}.suggestion{padding:12px;border-radius:15px;background:#f8faf9;border:1px solid var(--line);margin-top:8px}.progressbar{height:10px;background:#dfe7e3;border-radius:999px;overflow:hidden}.progressbar span{display:block;height:100%;background:#fff}.posegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.posecard{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.cloudbadge{margin-left:auto;display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:750;color:var(--muted);white-space:nowrap}.cloudbadge .dot{width:8px;height:8px;border-radius:50%;background:#9aa7a2}.cloudbadge.synced .dot{background:#1f7a5c}.cloudbadge.syncing .dot{background:#c58b2c}.cloudbadge.offline .dot{background:#9b3d3d}.accountRow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.accountAvatar{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--accent2)}@media(max-width:680px){.grid.two,.formgrid,.posegrid{grid-template-columns:1fr}.full{grid-column:auto}.item{flex-direction:column}.actions{width:100%}.actions .btn{flex:1}.big{font-size:34px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header><div class="mark">◒</div><div><h1 style="margin:0">Yoga Progress</h1><div class="sub">Practice with purpose. Track what matters.</div></div></header>
+<header><div class="mark">◒</div><div><h1 style="margin:0">Yoga Progress</h1><div class="sub">Practice with purpose. Track what matters.</div></div><div id="cloudBadge" class="cloudbadge"><span class="dot"></span><span id="cloudBadgeText">Local only</span></div></header>
 
 <section id="home" class="view active">
 <div class="grid"><div class="card hero"><div class="small">TOTAL PRACTICE</div><div class="big"><span id="totalMinutes">0</span> min</div><div><span id="totalHours">0</span> hours</div><div class="progressbar" style="margin-top:14px"><span id="heroProgress"></span></div><div class="small" id="nextMilestoneText" style="margin-top:8px"></div></div></div>
@@ -43,7 +43,17 @@
 
 <section id="setup" class="view">
 <div class="grid"><div class="card"><h2>Setup</h2><div class="formgrid"><div><label>Starting balance (min)</label><input id="startingBalance" type="number"></div><div><label>Weekly target (min)</label><input id="weeklyTarget" type="number"></div><div class="full"><label>Starting status</label><input id="startingStatus"></div></div><div style="height:12px"></div><button class="btn" onclick="saveSettings()">Save settings</button></div>
-<div class="card"><h3>Backup</h3><div class="actions"><button class="btn alt" onclick="exportAll()">Export all data</button><button class="btn alt" onclick="document.getElementById('restoreFile').click()">Restore backup</button><input id="restoreFile" class="hidden" type="file" accept=".json" onchange="restoreAll(event)"></div></div></div>
+<div class="card"><h3>Cloud Sync</h3><p class="muted">Sign in with Google to keep your practices, plan, completed sessions, favorites, comments and settings synchronized across devices.</p>
+<div id="cloudSignedOut">
+  <button class="btn" onclick="firebaseSignIn()">Sign in with Google</button>
+  <div class="small" style="margin-top:9px">Your existing local data stays on this device. On first sign-in, an empty cloud account is initialized from this local copy.</div>
+</div>
+<div id="cloudSignedIn" class="hidden">
+  <div class="accountRow"><img id="cloudAvatar" class="accountAvatar" alt=""><div><strong id="cloudUserName"></strong><div class="small" id="cloudUserEmail"></div><div class="small" id="cloudLastSync">Not synced yet</div></div></div>
+  <div class="actions" style="margin-top:12px"><button class="btn" onclick="firebaseSyncNow()">Sync now</button><button class="btn ghost" onclick="firebaseSignOut()">Sign out</button></div>
+</div>
+<div id="cloudError" class="small" style="margin-top:10px;color:var(--danger)"></div>
+</div><div class="card"><h3>Backup</h3><div class="actions"><button class="btn alt" onclick="exportAll()">Export all data</button><button class="btn alt" onclick="document.getElementById('restoreFile').click()">Restore backup</button><input id="restoreFile" class="hidden" type="file" accept=".json" onchange="restoreAll(event)"></div></div></div>
 </section>
 </div>
 
@@ -75,7 +85,9 @@ function today(){return new Date().toISOString().slice(0,10)} function nowTime()
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
 let data=JSON.parse(localStorage.getItem(KEY)||'null')||{settings:{startingBalance:3800,weeklyTarget:175,startingStatus:'Advanced Beginner / Early Intermediate'},practices:[],logs:[],plan:[],milestonePlans:{},assessments:[]};
 function migrate(){data.settings=data.settings||{startingBalance:3800,weeklyTarget:175,startingStatus:'Advanced Beginner / Early Intermediate'};data.practices=data.practices||[];data.logs=data.logs||[];data.plan=data.plan||data.suggestedPlan?.filter(x=>!x.rest).map(x=>({id:uuid(),label:x.label||'Training',practiceId:x.practiceId||'',suggestedType:''}))||[];data.practices.forEach(p=>{p.tags=p.tags||[];p.featuredPoses=p.featuredPoses||[];p.comments=p.comments||'';p.favorite=!!p.favorite});NEW_PRACTICES.forEach(np=>{if(!data.practices.some(p=>p.videoUrl===np.videoUrl||p.title.toLowerCase()===np.title.toLowerCase()))data.practices.push({...np,id:uuid(),favorite:false,comments:''})});saveRaw()}
-function saveRaw(){localStorage.setItem(KEY,JSON.stringify(data))} function save(){saveRaw();renderAll()}
+function saveRaw(){localStorage.setItem(KEY,JSON.stringify(data));if(!window.__suppressCloudSync&&window.cloudDataChanged)window.cloudDataChanged()} function save(){saveRaw();renderAll()}
+window.getYogaData=()=>data;
+window.replaceYogaData=(incoming)=>{window.__suppressCloudSync=true;data=incoming||{};migrate();window.__suppressCloudSync=false;renderAll()};
 function toast(msg){toastEl=document.getElementById('toast');toastEl.textContent=msg;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),1700)}
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
 function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='plan')renderPlan();if(id==='poses')renderPoses()}
@@ -111,5 +123,254 @@ function restoreAll(e){const f=e.target.files[0];if(!f)return;const r=new FileRe
 function renderAll(){renderHome();renderPractices();renderPlan();renderPoses();renderHistory();renderSettings()}
 migrate();renderAll();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import {
+  getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
+  setPersistence, browserLocalPersistence
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import {
+  getFirestore, doc, getDoc, setDoc, onSnapshot, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAmuJVb_IbTlMlREnfBz9JUxTPgXSc-nbY",
+  authDomain: "yoga-progress.firebaseapp.com",
+  projectId: "yoga-progress",
+  storageBucket: "yoga-progress.firebasestorage.app",
+  messagingSenderId: "766222177915",
+  appId: "1:766222177915:web:a3dc9eb6c395ccd8d374de",
+  measurementId: "G-71T2DZG6Y6"
+};
+
+const META_KEY = "yogaCloudMeta_v1";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+let currentUser = null;
+let unsubscribeCloud = null;
+let syncTimer = null;
+let uploadInProgress = false;
+let applyingRemote = false;
+
+function getMeta(){
+  try { return JSON.parse(localStorage.getItem(META_KEY) || "{}"); }
+  catch { return {}; }
+}
+function setMeta(patch){
+  const next = {...getMeta(), ...patch};
+  localStorage.setItem(META_KEY, JSON.stringify(next));
+  return next;
+}
+function setCloudStatus(state, text){
+  const badge = document.getElementById("cloudBadge");
+  const badgeText = document.getElementById("cloudBadgeText");
+  if (badge){
+    badge.classList.remove("synced","syncing","offline");
+    if(state) badge.classList.add(state);
+  }
+  if(badgeText) badgeText.textContent = text;
+}
+function setCloudError(msg=""){
+  const el = document.getElementById("cloudError");
+  if(el) el.textContent = msg;
+}
+function updateAccountUI(){
+  const signedOut = document.getElementById("cloudSignedOut");
+  const signedIn = document.getElementById("cloudSignedIn");
+  if(!signedOut || !signedIn) return;
+  signedOut.classList.toggle("hidden", !!currentUser);
+  signedIn.classList.toggle("hidden", !currentUser);
+  if(currentUser){
+    document.getElementById("cloudUserName").textContent = currentUser.displayName || "Google account";
+    document.getElementById("cloudUserEmail").textContent = currentUser.email || "";
+    const avatar = document.getElementById("cloudAvatar");
+    if(currentUser.photoURL){ avatar.src=currentUser.photoURL; avatar.style.display="block"; }
+    else { avatar.removeAttribute("src"); avatar.style.display="none"; }
+    const meta=getMeta();
+    document.getElementById("cloudLastSync").textContent =
+      meta.lastSyncedAt ? "Last synced " + new Date(meta.lastSyncedAt).toLocaleString() : "Not synced yet";
+  }
+}
+
+function markLocalChanged(){
+  if(applyingRemote) return;
+  setMeta({localUpdatedAtMs:Date.now(), dirty:true});
+  if(!currentUser){
+    setCloudStatus("", "Local only");
+    return;
+  }
+  if(!navigator.onLine){
+    setCloudStatus("offline", "Offline · changes saved");
+    return;
+  }
+  setCloudStatus("syncing", "Syncing…");
+  clearTimeout(syncTimer);
+  syncTimer=setTimeout(()=>uploadLocal(false), 700);
+}
+window.cloudDataChanged = markLocalChanged;
+
+async function uploadLocal(force=false){
+  if(!currentUser || uploadInProgress) return;
+  if(!navigator.onLine){
+    setCloudStatus("offline", "Offline · changes saved");
+    return;
+  }
+  uploadInProgress=true;
+  setCloudError("");
+  setCloudStatus("syncing","Syncing…");
+  try{
+    const now=Date.now();
+    const ref=doc(db,"users",currentUser.uid);
+    await setDoc(ref,{
+      payload: window.getYogaData(),
+      updatedAt: serverTimestamp(),
+      updatedAtMs: now,
+      schemaVersion: 1
+    },{merge:false});
+    setMeta({
+      uid:currentUser.uid,
+      localUpdatedAtMs:now,
+      lastSyncedAt:now,
+      lastCloudUpdatedAtMs:now,
+      dirty:false
+    });
+    setCloudStatus("synced","Synced");
+    updateAccountUI();
+  }catch(err){
+    console.error(err);
+    setCloudStatus("offline","Sync failed");
+    setCloudError("Cloud sync failed: " + (err?.message || err));
+  }finally{
+    uploadInProgress=false;
+  }
+}
+
+async function applyRemote(payload, cloudMs){
+  applyingRemote=true;
+  try{
+    window.__suppressCloudSync=true;
+    window.replaceYogaData(payload);
+    window.__suppressCloudSync=false;
+    const now=Date.now();
+    setMeta({
+      uid:currentUser.uid,
+      localUpdatedAtMs:cloudMs || now,
+      lastCloudUpdatedAtMs:cloudMs || now,
+      lastSyncedAt:now,
+      dirty:false
+    });
+    setCloudStatus("synced","Synced");
+    updateAccountUI();
+  }finally{
+    window.__suppressCloudSync=false;
+    applyingRemote=false;
+  }
+}
+
+async function initializeUserCloud(user){
+  const ref=doc(db,"users",user.uid);
+  setCloudStatus("syncing","Connecting…");
+  setCloudError("");
+  const snap=await getDoc(ref);
+  const meta=getMeta();
+  const localData=window.getYogaData();
+
+  if(!snap.exists()){
+    if(meta.uid && meta.uid !== user.uid){
+      const ok=confirm("This Google account has no Yoga Progress cloud data. Upload the current local data to this new account?");
+      if(!ok){
+        setCloudStatus("","Signed in · cloud empty");
+        return;
+      }
+    }
+    await uploadLocal(true);
+  }else{
+    const cloud=snap.data() || {};
+    const cloudMs=Number(cloud.updatedAtMs || 0);
+    const localMs=Number(meta.localUpdatedAtMs || 0);
+    const sameUser=meta.uid===user.uid;
+
+    if(sameUser && meta.dirty && localMs > cloudMs){
+      await uploadLocal(true);
+    }else if(cloud.payload){
+      await applyRemote(cloud.payload, cloudMs);
+      // Migration may add app-shipped practices that were not in an older cloud copy.
+      setTimeout(()=>uploadLocal(true), 150);
+    }
+  }
+
+  if(unsubscribeCloud) unsubscribeCloud();
+  unsubscribeCloud=onSnapshot(ref,(snapshot)=>{
+    if(!snapshot.exists() || uploadInProgress || applyingRemote) return;
+    const remote=snapshot.data() || {};
+    const remoteMs=Number(remote.updatedAtMs || 0);
+    const metaNow=getMeta();
+    const localMs=Number(metaNow.localUpdatedAtMs || 0);
+    if(remote.payload && remoteMs > localMs && !metaNow.dirty){
+      applyRemote(remote.payload, remoteMs);
+    }
+  },err=>{
+    console.error(err);
+    setCloudError("Realtime sync: " + (err?.message || err));
+  });
+}
+
+window.firebaseSignIn = async function(){
+  setCloudError("");
+  try{
+    await setPersistence(auth,browserLocalPersistence);
+    await signInWithPopup(auth,provider);
+  }catch(err){
+    console.error(err);
+    setCloudError("Sign-in failed: " + (err?.message || err));
+  }
+};
+window.firebaseSignOut = async function(){
+  try{ await signOut(auth); }catch(err){ setCloudError(err?.message || String(err)); }
+};
+window.firebaseSyncNow = async function(){
+  if(!currentUser) return window.firebaseSignIn();
+  setMeta({localUpdatedAtMs:Date.now(),dirty:true});
+  await uploadLocal(true);
+};
+
+window.addEventListener("online",()=>{
+  if(currentUser){
+    setCloudStatus("syncing","Back online · syncing…");
+    const meta=getMeta();
+    if(meta.dirty) uploadLocal(true);
+    else setCloudStatus("synced","Synced");
+  }
+});
+window.addEventListener("offline",()=>{
+  setCloudStatus("offline", currentUser ? "Offline · local changes saved" : "Offline");
+});
+
+onAuthStateChanged(auth,async user=>{
+  currentUser=user;
+  updateAccountUI();
+  if(!user){
+    if(unsubscribeCloud){unsubscribeCloud();unsubscribeCloud=null;}
+    setCloudStatus(navigator.onLine?"":"offline", navigator.onLine ? "Local only" : "Offline");
+    return;
+  }
+  try{
+    setMeta({uid:user.uid});
+    await initializeUserCloud(user);
+  }catch(err){
+    console.error(err);
+    setCloudStatus("offline","Cloud unavailable");
+    setCloudError("Cloud initialization failed: " + (err?.message || err));
+  }
+});
+
+updateAccountUI();
+if(!navigator.onLine) setCloudStatus("offline","Offline");
+</script>
+
 </body>
 </html>
