@@ -284,7 +284,22 @@ function applyDimitrisRecovery20261004(){
   if(added){u.updatedAtMs=Date.now();localStorage.setItem(MULTI_KEY,JSON.stringify(multiStore));if(activeUserId==='dimitris')loadActiveView('dimitris')}
   return added>0;
 }
+function applyChristianeRecovery20261004(){
+  const u=multiStore?.users?.dimitris;
+  if(!u)return false;
+  u.logs=Array.isArray(u.logs)?u.logs:[];
+  const dates=['2026-09-15','2026-09-22','2026-09-29'];
+  let added=0;
+  dates.forEach(date=>{
+    if(u.logs.some(l=>l.id==='recovery-christiane-'+date))return;
+    u.logs.push({id:'recovery-christiane-'+date,date,startTime:'',practiceId:'',practiceTitle:'Vinyasa Yoga Class — Christiane',type:'Vinyasa',duration:80,difficulty:'Moderate',sessionDescription:'Instructor-led Vinyasa yoga class with Christiane',comments:'Recovered after data reset'});
+    added++;
+  });
+  if(added){u.updatedAtMs=Date.now();localStorage.setItem(MULTI_KEY,JSON.stringify(multiStore));if(activeUserId==='dimitris')loadActiveView('dimitris')}
+  return added>0;
+}
 applyDimitrisRecovery20261004();
+applyChristianeRecovery20261004();
 function save(){saveRaw();renderAll()}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}function fmtHours(m){return (m/60).toFixed(1)}function today(){return new Date().toISOString().slice(0,10)}function nowTime(){return new Date().toTimeString().slice(0,5)}function totalLogged(){return data.logs.reduce((a,b)=>a+Number(b.duration||0),0)}function total(){return Number(data.settings.startingBalance||0)+totalLogged()}function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='progressView')setTimeout(drawChart,30);if(id==='poses')renderPoseLibrary();if(id==='plan')renderPlan()}
