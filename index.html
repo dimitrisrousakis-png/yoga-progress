@@ -267,6 +267,24 @@ function refreshCuratedPractices(){
 }
 function migrate(){data.poseFavorites=Array.isArray(data.poseFavorites)?data.poseFavorites:[];data.settings=data.settings||defaultUser(activeUserId).settings;data.practices=data.practices||[];data.logs=data.logs||[];data.milestonePlans=data.milestonePlans||{};data.assessments=data.assessments||[];data.plan=Array.isArray(data.plan)?data.plan:[];data.practices.forEach(p=>{if(!p.intensity)p.intensity='Moderate';if(p.progression===undefined)p.progression=false;if(p.favorite===undefined)p.favorite=false;if(!p.featuredPoses)p.featuredPoses=[];if(p.comments===undefined)p.comments='';});data.logs.forEach(l=>{if(l.sessionDescription===undefined)l.sessionDescription='';if(l.comments===undefined)l.comments=l.notes||'';});refreshCuratedPractices();data.logs.forEach(l=>{const p=data.practices.find(p=>p.id===l.practiceId)||data.practices.find(p=>p.title===l.practiceTitle);l.type=p?canonicalYogaType(p):canonicalYogaType({type:l.type||'',title:l.practiceTitle||'',description:l.sessionDescription||''})});saveRaw()}
 migrateLegacyToMulti();loadActiveView(multiStore.activeUserId||'dimitris');migrate();
+function applyDimitrisRecovery20261004(){
+  const u=multiStore?.users?.dimitris;
+  if(!u)return false;
+  u.settings=u.settings||defaultUser('dimitris').settings;
+  u.settings.startingBalance=3800;
+  u.logs=Array.isArray(u.logs)?u.logs:[];
+  const existingDates=new Set(u.logs.map(l=>l.date));
+  let added=0;
+  for(let d=new Date('2026-09-09T12:00:00');d<=new Date('2026-10-03T12:00:00');d.setDate(d.getDate()+1)){
+    const date=d.toISOString().slice(0,10);
+    if(existingDates.has(date))continue;
+    u.logs.push({id:'recovery-'+date,date,startTime:'',practiceId:'',practiceTitle:'Daily Yoga Practice',type:'Vinyasa',duration:25,difficulty:'Moderate',sessionDescription:'Reconstructed daily practice',comments:'Recovered after data reset'});
+    added++;
+  }
+  if(added){u.updatedAtMs=Date.now();localStorage.setItem(MULTI_KEY,JSON.stringify(multiStore));if(activeUserId==='dimitris')loadActiveView('dimitris')}
+  return added>0;
+}
+applyDimitrisRecovery20261004();
 function save(){saveRaw();renderAll()}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}function fmtHours(m){return (m/60).toFixed(1)}function today(){return new Date().toISOString().slice(0,10)}function nowTime(){return new Date().toTimeString().slice(0,5)}function totalLogged(){return data.logs.reduce((a,b)=>a+Number(b.duration||0),0)}function total(){return Number(data.settings.startingBalance||0)+totalLogged()}function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='progressView')setTimeout(drawChart,30);if(id==='poses')renderPoseLibrary();if(id==='plan')renderPlan()}
