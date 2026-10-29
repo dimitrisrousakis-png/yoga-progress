@@ -377,30 +377,26 @@ function openPlanPicker(){planPickerModal.classList.remove('hidden');planPickerS
 function closePlanPicker(){planPickerModal.classList.add('hidden')}
 function renderPlanPicker(){const q=(planPickerSearch.value||'').toLowerCase();const arr=data.practices.filter(p=>!q||[p.title,p.type,p.instructor,...(p.tags||[])].join(' ').toLowerCase().includes(q));planPickerList.innerHTML=arr.map(p=>`<div class="item" style="padding:10px"><div><strong>${p.favorite?'★ ':''}${esc(p.title)}</strong><div class="muted small">${p.duration||'?'} min · ${esc(p.type)}</div></div><button class="btn" style="padding:7px 10px;font-size:12px" onclick="addPracticeToPlan('${p.id}');closePlanPicker()">Add</button></div>`).join('')}
 const COMPLETION_QUOTES=[
-["Consistency is not about perfection. It is about returning.","Yoga Progress · Practice reflection"],
-["The breath is your anchor; the movement is your exploration.","Yoga Progress · Practice reflection"],
-["Progress can be quiet. Sometimes it feels like greater ease.","Yoga Progress · Practice reflection"],
-["Strength creates possibilities. Awareness teaches you how to use them.","Yoga Progress · Practice reflection"],
-["The purpose of practice is not to conquer the pose, but to understand yourself.","Yoga Progress · Practice reflection"],
-["Some days you build strength. Other days you learn to soften.","Yoga Progress · Practice reflection"],
-["A steady practice makes room for change.","Yoga Progress · Practice reflection"],
-["Meet your body where it is today, not where it was yesterday.","Yoga Progress · Practice reflection"],
-["A mindful pause is part of the practice.","Yoga Progress · Practice reflection"],
-["Balance begins with noticing when you need support.","Yoga Progress · Practice reflection"],
-["Every exhale is an invitation to release unnecessary effort.","Yoga Progress · Practice reflection"],
-["The simplest movement can reveal something new.","Yoga Progress · Practice reflection"],
-["Let patience be stronger than your expectations.","Yoga Progress · Practice reflection"],
-["Flexibility includes knowing when to rest.","Yoga Progress · Practice reflection"],
-["Your practice belongs to you; it is not a competition.","Yoga Progress · Practice reflection"],
-["Small movements, repeated with care, can change how you feel.","Yoga Progress · Practice reflection"],
-["Notice what is possible without forcing what is not.","Yoga Progress · Practice reflection"],
-["Presence is a skill you can practice every day.","Yoga Progress · Practice reflection"],
-["A strong foundation gives freedom to explore.","Yoga Progress · Practice reflection"],
-["You do not need a perfect session to have a meaningful one.","Yoga Progress · Practice reflection"],
-["Let your breath set a pace you can sustain.","Yoga Progress · Practice reflection"],
-["Rest is not the opposite of progress.","Yoga Progress · Practice reflection"],
-["Practice with curiosity instead of judgment.","Yoga Progress · Practice reflection"],
-["Each return to the mat is a new beginning.","Yoga Progress · Practice reflection"]
+["The mat is not a place to prove yourself. It is a place to discover yourself.","Yoga Progress · Practice reflection"],
+["True progress is measured not only by what your body can do, but by how calmly your mind responds.","Yoga Progress · Practice reflection"],
+["Every practice is different because you are different every day.","Yoga Progress · Practice reflection"],
+["Flexibility begins when you stop resisting where you are.","Yoga Progress · Practice reflection"],
+["A difficult pose teaches strength. A difficult moment teaches patience.","Yoga Progress · Practice reflection"],
+["The greatest achievement is learning to move with awareness.","Yoga Progress · Practice reflection"],
+["Your breath is a reminder that you can begin again at any moment.","Yoga Progress · Practice reflection"],
+["Discipline brings you to the mat. Curiosity keeps your practice alive.","Yoga Progress · Practice reflection"],
+["Do not rush toward the next pose. There is something to learn in the transition.","Yoga Progress · Practice reflection"],
+["The body develops through repetition. The mind develops through attention.","Yoga Progress · Practice reflection"],
+["Balance is not the absence of movement, but the ability to respond to it.","Yoga Progress · Practice reflection"],
+["A gentle practice can be just as meaningful as a demanding one.","Yoga Progress · Practice reflection"],
+["The deeper your awareness, the less you need to force.","Yoga Progress · Practice reflection"],
+["Strength without control is incomplete. Control without awareness is mechanical.","Yoga Progress · Practice reflection"],
+["The most important part of your practice may be the moment you choose to slow down.","Yoga Progress · Practice reflection"],
+["Your limitations are not obstacles to practice. They are part of what practice teaches you.","Yoga Progress · Practice reflection"],
+["A familiar sequence can become a new experience when approached with fresh attention.","Yoga Progress · Practice reflection"],
+["Consistency builds the habit. Reflection gives the habit meaning.","Yoga Progress · Practice reflection"],
+["Learn to appreciate the movement before seeking the achievement.","Yoga Progress · Practice reflection"],
+["The journey is not about becoming someone else. It is about understanding who you are.","Yoga Progress · Practice reflection"]
 ];
 let quoteReturning=false;
 function openCompletePractice(id,planIndex=''){const p=data.practices.find(x=>x.id===id);if(!p)return;completePracticeId.value=id;completePlanIndex.value=planIndex;completePracticeTitle.textContent=p.title;completeDate.value=today();completeTime.value=nowTime();completeDuration.value=p.duration||'';completeComment.value='';completePracticeModal.classList.remove('hidden')}
@@ -511,7 +507,7 @@ function renderPoseLibrary(){
 }
 function filterSessionsForPose(enc){const name=decodeURIComponent(enc);showView('practice');poseFilter.value=[...poseFilter.options].some(o=>o.value===name)?name:'';if(!poseFilter.value){practiceSearch.value=name}renderPractices()}
 function addPoseAsNextTarget(enc){const name=decodeURIComponent(enc),m=nextMilestone().m;data.milestonePlans[m]=data.milestonePlans[m]||[];if(data.milestonePlans[m].some(t=>t.name.toLowerCase()===name.toLowerCase()))return toast('Already a target for the next milestone');data.milestonePlans[m].push({id:uuid(),skillId:'pose-library',name,goal:'Comfortable, controlled execution',priority:'Main'});save();toast(`${name} added to ${m.toLocaleString()} min targets`)}
-function renderAll(){populatePracticeSelects();renderHome();renderPractices();renderHistory();renderProgress();renderSettings();renderPoseLibrary();renderPlan();drawChart()}quickDate.value=today();quickTime.value=nowTime();quickPractice.addEventListener('change',e=>{const p=data.practices.find(x=>x.id===e.target.value);if(p&&p.duration)quickDuration.value=p.duration});if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js?v=21',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});let swReloaded=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(swReloaded)return;swReloaded=true;location.reload()})}renderAll();setTimeout(()=>{const p=data.practices[0];if(p?.duration&&!quickDuration.value)quickDuration.value=p.duration},0);initLock();
+function renderAll(){populatePracticeSelects();renderHome();renderPractices();renderHistory();renderProgress();renderSettings();renderPoseLibrary();renderPlan();drawChart()}quickDate.value=today();quickTime.value=nowTime();quickPractice.addEventListener('change',e=>{const p=data.practices.find(x=>x.id===e.target.value);if(p&&p.duration)quickDuration.value=p.duration});if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js?v=22',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});let swReloaded=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(swReloaded)return;swReloaded=true;location.reload()})}renderAll();setTimeout(()=>{const p=data.practices[0];if(p?.duration&&!quickDuration.value)quickDuration.value=p.duration},0);initLock();
 </script>
 
 <script type="module">
