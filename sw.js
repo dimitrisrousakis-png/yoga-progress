@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yoga-progress-v16';
+const CACHE_NAME = 'yoga-progress-v17';
 const APP_SHELL = [
   './',
   './index.html',
