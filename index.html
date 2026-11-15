@@ -533,7 +533,7 @@ function renderPoseLibrary(){
 function filterSessionsForPose(enc){const name=decodeURIComponent(enc);showView('practice');poseFilter.value=[...poseFilter.options].some(o=>o.value===name)?name:'';if(!poseFilter.value){practiceSearch.value=name}renderPractices()}
 function addPoseAsNextTarget(enc){const name=decodeURIComponent(enc),m=nextMilestone().m;data.milestonePlans[m]=data.milestonePlans[m]||[];if(data.milestonePlans[m].some(t=>t.name.toLowerCase()===name.toLowerCase()))return toast('Already a target for the next milestone');data.milestonePlans[m].push({id:uuid(),skillId:'pose-library',name,goal:'Comfortable, controlled execution',priority:'Main'});save();toast(`${name} added to ${m.toLocaleString()} min targets`)}
 
-const MEDITATION_STARTERS=[{id:'mindfulness-daily-10',title:'10-Minute Daily Mindfulness Routine',url:'',duration:10,focus:'Self-guided',builtIn:true},{id:'guided-ru4hdcMmlwQ',title:'Guided Meditation',url:'https://youtu.be/ru4hdcMmlwQ',duration:0,focus:'Guided meditation'}];
+const MEDITATION_STARTERS=[{id:'guided-zbik25XoQho',title:'5 MIN GUIDED MEDITATION | Morning/Evening Positive Thinking & Inner Peace',url:'https://youtu.be/zbik25XoQho',duration:5,focus:'Positive thinking · Inner peace · Morning/Evening',instructor:'Charlie Follows'},{id:'mindfulness-daily-10',title:'10-Minute Daily Mindfulness Routine',url:'',duration:10,focus:'Self-guided',builtIn:true},{id:'guided-ru4hdcMmlwQ',title:'Guided Meditation',url:'https://youtu.be/ru4hdcMmlwQ',duration:0,focus:'Guided meditation'}];
 function meditationLibrary(){return [...MEDITATION_STARTERS,...(multiStore.shared.meditations||[])]}
 function renderMeditations(){
  const root=document.getElementById('meditationLibrary');if(!root)return;
